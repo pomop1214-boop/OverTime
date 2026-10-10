@@ -130,10 +130,11 @@ svg{display:block}
 .fl{display:grid;gap:6px;min-width:0}
 .fl > span{font-size:13px;font-weight:600;display:flex;justify-content:space-between;gap:8px}
 .fl > span em{font-style:normal;color:var(--mute);font-weight:500}
-.inp{position:relative}
+.inp{position:relative;display:block;min-width:0}
+.fl > *{min-width:0}
 .inp > svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--mute);pointer-events:none}
-.inp > input,.inp > select{padding-left:38px}
 input[type=date],input[type=time],input[type=text],input[type=search],select,textarea{display:block;width:100%;min-width:0;height:46px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:16px;-webkit-appearance:none;appearance:none}
+.inp > input,.inp > select{padding-left:38px}
 input::-webkit-date-and-time-value{text-align:left}
 select{padding-right:34px;cursor:pointer}
 .sel{position:relative}
@@ -356,10 +357,10 @@ tr.flash td{animation:fl 1.6s ease-out}
         <section class="card fc" id="formCard" aria-labelledby="fTitle">
           <h2 class="ttl"><span class="plus-c" data-ic="plus"></span><span id="fTitle">추가근무 등록</span></h2>
           <form id="entryForm" novalidate style="display:grid;gap:14px">
-            <label class="fl"><span>근무 날짜<em id="fDow"></em></span><span class="inp"><span data-ic="cal"></span><input type="date" id="fDate"></span></label>
+            <label class="fl"><span>근무 날짜<em id="fDow"></em></span><input type="date" id="fDate"></label>
             <div class="two">
-              <label class="fl"><span>시작 시간</span><span class="inp"><span data-ic="clock"></span><input type="time" id="fStart"></span></label>
-              <label class="fl"><span>종료 시간</span><span class="inp"><span data-ic="clock"></span><input type="time" id="fEnd"></span></label>
+              <label class="fl"><span>시작 시간</span><input type="time" id="fStart"></label>
+              <label class="fl"><span>종료 시간</span><input type="time" id="fEnd"></label>
             </div>
             <div class="auto" id="fAuto"><span><span data-ic="bolt"></span>자동 계산된 근무시간</span><b id="fAutoV">—</b><small id="fAutoN">시작·종료 시간을 넣으면 계산돼요</small></div>
             <label class="fl"><span>메모 (선택)</span><textarea id="fMemo" maxlength="200" placeholder="추가근무 내용을 입력하세요."></textarea></label>
